@@ -1,27 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="LunchCheckerApp">
   <head>
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
   </head>
 <body>
-   <div class="container">
+   <div class="container" ng-controller="LunchCheckerController">
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control" ng-model="dishes" ng-class="{green_inputtext: greenStyle, red_inputtext: redStyle}">
+             <div class="note">
+                Note: An empty item, i.e., `, ,` is note consired as an item towards to the count.
+             </div>
          </div>
+
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="checkList()">
+                Check If Too Much
+             </button>
          </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
+         <div class="form-group message" ng-class="{green_message: greenStyle, red_message: redStyle}">
+           {{ message }}
          </div>
    </div>
 

@@ -1,0 +1,16 @@
+.message { font-size: 1.3em; font-weight: bold; }
+.green_message { color: green }
+.red_message { color: red }
+.red_inputtext {
+   border-style: solid;
+   border-width: 1px;
+   border-color: red;
+}
+.green_inputtext {
+   border-style: solid;
+   border-width: 1px;
+   border-color: green;
+}
+.note {
+     color: #7F7F7F;
+}
