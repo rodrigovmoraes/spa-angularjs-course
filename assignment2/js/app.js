@@ -60,10 +60,10 @@
       service.markItemAsBought = function(itemIndex) {
          //check if itemIndex is in array's bounds
          if(itemIndex >= 0 && itemIndex < toBuyList.length) {
-            var item = toBuyList.splice(itemIndex, 1); //splice removes items from
+            var removedItems = toBuyList.splice(itemIndex, 1); //splice removes items from
                                                        //the array and
                                                        //returns the removed items
-            boughtList.push(item[0]);
+            boughtList.push(removedItems[0]);
          }
       };
 
