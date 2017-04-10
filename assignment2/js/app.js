@@ -55,7 +55,7 @@
          return boughtList;
       };
 
-      //mark a item as bought,
+      //mark an item as bought,
       //move the item from to-buy list to bought list
       service.markItemAsBought = function(itemIndex) {
          //check if itemIndex is in array's bounds
