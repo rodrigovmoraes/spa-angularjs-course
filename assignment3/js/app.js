@@ -48,25 +48,29 @@
 
       service.getMatchedMenuItems = function getMatchedMenuItems(searchTerm) {
          var deferred = $q.defer(); //async method
-         var result = {
-           foundItems: [],
-           message: ""
-         };
 
-         var httpResponse = $http({
+         $http({
+           //make the http request to service
            method: "GET",
            url: (APIBasePath + "/menu_items.json")
-         });
-
-         httpResponse.then( function(response) {
+         }).then( function(response) {
             //HTTP request was completed
+
             var found = false; //mark as 'nothing was found'
+
+            var result = {
+              foundItems: [], //retains the desired items
+              message: "" //message, if something will be wrong
+            };
+
             //response.data is the JSON object returned by http request
             response.data.menu_items.forEach( function(item){
+               //check if the description contains the search term
                if(item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1) {
                   result.foundItems.push(item);
                   found = true; //mark as 'something was found'
                }
+
             });
 
             //if nothing is found, reject and set the message
