@@ -1,0 +1,24 @@
+<table class="table table-hover" ng-if="foundItems.items.length">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in foundItems.items">
+        <td>{{item.short_name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>
+           <button class="btn btn-primary" ng-click="foundItems.removeItem({ itemIndex : $index})">Don't want this one!</button>
+        </td>
+      </tr>
+   </tbody>
+</table>
+
+<div class="alert alert-warning" ng-if="foundItems.message">
+  <strong>{{foundItems.message}}</strong>
+</div>
