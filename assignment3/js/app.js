@@ -19,6 +19,12 @@
 
       // "Narrow It Down For Me!" clicked
       narrowIt.searchItems = function() {
+         //check if the user has entered something
+         if(!narrowIt.searchTerm) {
+            narrowIt.message = "Nothing found";
+            return;
+         }
+
          menuSearchService.getMatchedMenuItems(narrowIt.searchTerm)
             .then(function(result) {
                //something was found
