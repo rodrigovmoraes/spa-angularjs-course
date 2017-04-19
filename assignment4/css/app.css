@@ -1,0 +1,11 @@
+body {
+   margin-top: 2%;
+   margin-right: 10%;
+   margin-left: 10%;
+   margin-bottom: 2%;
+}
+
+a.list-group-item:hover {
+   background-color: darkblue;
+   color: white
+}

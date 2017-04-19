@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+   <head>
+      <meta charset="utf-8">
+      <title>Hello Coursera</title>
+
+      <!-- Styles -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/app.css">
+
+      <!-- Libs -->
+      <script src="lib/angular.min.js" charset="utf-8"></script>
+      <script src="lib/angular-ui-router.min.js"></script>
+
+      <!-- App JS files -->
+      <!-- Menu App module JS files -->
+      <script src="src/menuapp/menuapp.module.js" charset="utf-8"></script>
+      <script src="src/menuapp/routes.js" charset="utf-8"></script>
+
+      <script src="src/menuapp/categories.component.js" charset="utf-8"></script>
+      <script src="src/menuapp/categories.view.controller.js" charset="utf-8"></script>
+
+      <script src="src/menuapp/items.component.js" charset="utf-8"></script>
+      <script src="src/menuapp/items.view.controller.js" charset="utf-8"></script>
+
+      <!-- Data module JS files -->
+      <script src="src/data/data.module.js" charset="utf-8"></script>
+      <script src="src/data/menudata.service.js" charset="utf-8"></script>
+
+   </head>
+   <body>
+      <h1>Welcome to our Restaurant</h1>
+
+      <ui-view></ui-view>
+   </body>
+</html>
